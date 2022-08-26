@@ -42,7 +42,7 @@ def nn_ticids(indir, transit_sec, tic):
     '''    
     tic_list_all = pd.read_csv("{}/data/all_targets_list.txt".format(indir)).sort_values(['sec','Camera', 'RA', 'Dec']).reset_index()
     
-    tic_list=tic_list_all[(tic_list_all['sec']==neighbours_sector[0])].reset_index()
+    tic_list=tic_list_all[(tic_list_all['sec']==neighbours_sector)].reset_index()
 
 
     # acess the information for the target stars
