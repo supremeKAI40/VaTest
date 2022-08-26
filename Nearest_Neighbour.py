@@ -30,7 +30,7 @@ def nn_ticids(indir, transit_sec, tic):
     '''
 
     neighbours_sector = transit_sec[0]
-'''
+    '''
     if neighbours_sector < 10:
         download_sector = "00{}".format(neighbours_sector)
     else:
@@ -39,7 +39,7 @@ def nn_ticids(indir, transit_sec, tic):
     # load the data file of the sector that the first marked transit appears in
     # sort the list to be ordered by camera, RA and then Dec
     #tic_list = pd.read_csv("{}/data/all_targets_S{}_v1.txt".format(indir,download_sector)).sort_values(['Camera', 'RA', 'Dec']).reset_index()
-'''    
+    '''    
     tic_list_all = pd.read_csv("{}/data/all_targets_list.txt".format(indir)).sort_values(['sec','Camera', 'RA', 'Dec']).reset_index()
     
     tic_list=tic_list_all[(tic_list_all['sec']==neighbours_sector[0])].reset_index()
