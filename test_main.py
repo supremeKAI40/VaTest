@@ -1,4 +1,5 @@
 import Nearest_Neighbour as test
+import Download_data_utility as download
 
 #testing for toi_1973 sector 38
 tics=[47617161]
@@ -9,12 +10,15 @@ transitlist=[] #Should be transit times in the form of list !!NOT TESTED YET
 !!!Careful on path to be Windows/Linux format according to user's OS
 it is situated in tess mit site online @https://tess.mit.edu/observations/target-lists/
 '''
-indir="C:/Personal/Internships/ExoplanetStatisticalValidation/lattetest/test_automation"
+indir="C:/Personal/Internships/ExoplanetStatisticalValidation/VATEST_package/"
 
 
 # --------------------------------------------
 # -----------------testing ------------------
 # --------------------------------------------
+
+'downloading tess target list and sector download codes for usage'
+download.tp_files(indir)
 
 'Calling tic id list function'
 ticids, distance, target_ra, target_dec=test.nn_ticids(indir,sector,tics)
